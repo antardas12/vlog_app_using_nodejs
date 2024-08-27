@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlogging Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Vlog</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="http://localhost:8080/vlog/new">post new vlog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="blog-posts">
+           <% for( let vlog of vlogs ) { %>
+            <article>
+                <h2><%= vlog.title %></h2>
+                <p><%= vlog.content %></p>
+                <form  method="get" action="/vlog/<%= vlog._id %>/edit" id="edit">
+                    
+                    <button>edit yor vlog</button>
+                </form>
+                <form action="http://localhost:8080/vlog/<%= vlog._id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </article>
+           <% } %>
+        
+        </section>
+        <aside class="sidebar">
+            <h2>About Me</h2>
+            <p>User name : </p>
+            <p>Short description about the vlogger.</p>
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Travel</a></li>
+                <li><a href="#">Technology</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Vlog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

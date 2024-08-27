@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Vlog</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Submit Your Vlog Post</h1>
+    </header>
+    <main>
+        <form action="/vlog/" method="post" >
+            <div class="form-group">
+                <label for="title">Vlog Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <!-- <div class="form-group">
+                <label for="title">User Name</label>
+                <input type="text" id="title" name="title" required>
+            </div> -->
+            <div class="form-group">
+                <label for="content">Vlog Content:</label>
+                <textarea id="content" name="content" rows="10" required></textarea>
+            </div>
+            <!-- <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div> -->
+          
+            <button type="submit">Submit Vlog</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Vlog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

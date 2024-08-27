@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Vlog Post</title>
+    <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+    <header>
+        <h1>Update Your Vlog Post</h1>
+    </header>
+    <main>
+        <form  action="/vlog/<%= vlog._id %>/?_method=PATCH" method="post" >
+            <div class="form-group">
+                <label for="id">Vlog ID:</label>
+                <!-- <input type="text" id="id" name="id" required> -->
+                 <p><%= vlog.id %></p>
+            </div>
+            <div class="form-group">
+                <label for="title">Vlog Title:</label>
+                <input type="text" id="title" name="title" value="<%= vlog.title %>"> 
+            </div>
+            <div class="form-group">
+                <label for="content">Vlog Content:</label>
+                <textarea id="content" name="content" rows="10" required><%= vlog.content %></textarea>
+            </div>
+         
+            
+            <button type="submit">Update Vlog</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Vlog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
